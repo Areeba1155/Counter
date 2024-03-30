@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+        integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <style>
+        :root {
+            --primary-color: #101010;
+            --secondary-color: #f9004d;
+            --text-color: #ffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            margin: auto;
+            height: 100vh;
+            background-color: black;
+        }
+
+        .navbar {
+            background-color: black;
+            width: 100%;
+            height: 12vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-list a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .nav-list a:hover {
+            color: var(--secondary-color);
+        }
+
+        .logo {
+            padding-left: 19px;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .sign-up-button a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .sign-up-button button {
+            margin-right: 16px;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 7px 18px;
+            background-color: var(--secondary-color);
+            border: none;
+            font-weight: bold;
+            border-radius: 22px;
+        }
+
+        .navbar button:hover {
+            background-color: maroon;
+        }
+
+        input {
+            padding: 87px 14px;
+            border-radius: 1000px;
+            border: 5px solid white;
+            background-color: black;
+            margin: 10% 0px 0px 40%;
+        }
+
+        #btn-two {
+            padding: 45px 0px 0px 36%;
+        }
+
+        #btn {
+            padding: 8px 10px;
+            font-size: 24px;
+            border-radius: 14px;
+        }
+
+        #btn1 {
+            padding: 8px 10px;
+            font-size: 24px;
+            border-radius: 14px;
+        }
+
+        #btn2 {
+            padding: 8px 10px;
+            font-size: 24px;
+            border-radius: 14px;
+        }
+
+        #display {
+            font-size: 72px;
+            margin-left: -120px;
+            margin-top: 18px;
+            position: absolute;
+            top: 234px;
+        }
+
+        .checkbtn {
+            font-size: 35px;
+            color: white;
+            cursor: pointer;
+            display: none;
+        }
+
+        #check {
+            display: none;
+        }
+
+        @media (max-width: 908px) {
+            .checkbtn {
+                display: block;
+            }
+
+            ul {
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                background: #2c3e50;
+                top: 80px;
+                left: -100%;
+                z-index: 99;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                transition: 1s ease-in-out;
+                font-size: 53px;
+            }
+
+            input {
+                padding: 87px 14px;
+                border-radius: 1000px;
+                border: 5px solid white;
+                background-color: black;
+                margin: 15% 0px 0px 33%;
+            }
+
+            #btn-two {
+                padding: 45px 0px 0px 33%;
+                display: flex;
+            }
+
+            #btn {
+                padding: 6px 8px;
+                font-size: 16px;
+                border-radius: 8px;
+            }
+
+            #btn1 {
+                padding: 6px 8px;
+                font-size: 16px;
+                border-radius: 8px;
+            }
+
+            #btn2 {
+                padding: 6px 8px;
+                font-size: 16px;
+                border-radius: 8px;
+            }
+
+
+            #check:checked~ul {
+                left: 0;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .checkbtn {
+                display: block;
+            }
+
+            .logo h1 {
+                font-size: 15px;
+                padding-top: 10px;
+                padding-right: 25px;
+            }
+
+            i {
+                font-size: 22px;
+                padding-left: 11px;
+            }
+
+            ul {
+                position: fixed;
+                width: 320px;
+                height: 85vh;
+                background: #2c3e50;
+                top: 80px;
+                left: -1010%;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                transition: all .5s;
+                font-size: 43px;
+            }
+
+            .sign-up-button button {
+                font-size: 10px;
+                padding: 5px 8px;
+                margin-top: 7px;
+            }
+
+            input {
+                padding: 87px 14px;
+                border-radius: 1000px;
+                border: 5px solid white;
+                background-color: black;
+                margin: 15% 0px 0px 16%;
+            }
+
+            #btn-two {
+                padding: 45px 0px 0px 16%;
+                display: flex;
+            }
+
+            #btn {
+                padding: 6px 8px;
+                font-size: 16px;
+                border-radius: 8px;
+            }
+
+            #btn1 {
+                padding: 6px 8px;
+                font-size: 16px;
+                border-radius: 8px;
+            }
+
+            #btn2 {
+                padding: 6px 8px;
+                font-size: 16px;
+                border-radius: 8px;
+            }
+
+            #display {
+                font-size: 52px;
+            }
+
+
+            #check:checked~ul {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="bi bi-list"></i>
+            </label>
+            <div class="logo">
+                <h1>Digital <span style="color: var(--secondary-color)">Counter</span> </h1>
+            </div>
+            <ul class="nav-list">
+                <a href="#">
+                    <li>Home
+                </a></li>
+                <a href="#">
+                    <li>About us
+                </a></li>
+                <a href="#">
+                    <li>Apps
+                </a></li>
+                <a href="#">
+                    <li>Developers
+                </a></li>
+                <a href="#">
+                    <li>Contact us
+                </a></li>
+            </ul>
+            <div class="sign-up-button">
+                <button><a href="#">Sign up</a></button>
+            </div>
+        </div>
+        <div class="box">
+            <input id="in">
+            <span id="display"></span>
+        </div>
+        <div id="btn-two">
+            <button id="btn">Count +</button>
+            <button id="btn1">Count -</button>
+            <button id="btn2">Reset</button>
+        </div>
+        <script>
+            var count = 0;
+            var display = document.querySelector("#display");
+            display.style.color = 'white';
+            var btn = document.getElementById("btn");
+            var btn1 = document.getElementById("btn1");
+            var rstBtn = document.getElementById("btn2");
+
+            // diplaying output
+            display.innerHTML = count;
+
+            // event listner
+            btn.addEventListener("click", function () {
+                count = count + 1;
+                console.log(count);
+                display.innerHTML = count;
+            });
+
+            btn1.addEventListener("click", function () {
+                console.log(count);
+                display.innerHTML = count;
+                if (count > 0) {
+                    count = count - 1;
+                }
+                else {
+                    count = 0;
+                }
+            });
+
+            rstBtn.addEventListener("click", function () {
+                count = 0;
+                console.log(count);
+                display.innerHTML = count;
+            });
+
+            // span.document.querySelector('#in'){
+            //     display.style.display='inline-block';
+            // }
+
+        </script>
+</body>
+
+</html>
